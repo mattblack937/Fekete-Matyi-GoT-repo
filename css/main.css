@@ -30,8 +30,25 @@ div>div {
 div>div>img {
   width: 45%;
   margin: 0;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+div>div>img:hover {
+  transform: scale(1.2);
 }
 
 div>div>span {
   font-size: 13px;
+}
+
+.right-div__search {
+  position: fixed;
+  bottom: 6px;
+  right: 10px;
+}
+
+.right-div__result {
+  display: inline-block;
+  background-color: red;
 }

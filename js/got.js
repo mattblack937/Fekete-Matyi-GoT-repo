@@ -25,11 +25,11 @@ getGameOfThronesCharacterDatas(
 // Live servert használd mindig!!!!!
 /* IDE ÍRD A FÜGGVÉNYEKET!!!!!! NE EBBE AZ EGY SORBA HANEM INNEN LEFELÉ! */
 
+
 function sortingInAbcOrder(data) {
   data.sort(function sort(a, b) {
     return a.name.localeCompare(b.name);
   });
-  console.log(data);
 }
 
 function listGotCharacters(data) {
@@ -49,4 +49,19 @@ function createListingElements(character) {
     <span>${character.name}</span>
     </div>
   `;
+}
+
+function searchInCharacters(data) {
+  var rightDiv = document.querySelector('.right-div');
+  var userInput = document.querySelector('#search__input');
+  userInput = userInput.value.toLowerCase();
+  for (var i = 0; i < data.length; i += 1) {
+    if (data[i].name.toLowerCase() === userInput) {
+      rightDiv.innerHTML += `<div class="right-div__result">${data[i].picture}</div><br>
+      <div class="right-div__result">${data[i].name}</div><br>
+      <div class="right-div__result"><img src="${data[i].house}"><img></div><br>
+      <div class="right-div__result">${data[i].bio}</div><br>    
+      `;
+    }
+  }
 }
